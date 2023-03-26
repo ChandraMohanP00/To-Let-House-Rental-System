@@ -106,7 +106,7 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">Welcome To Simple To-Let House Search System</div>
+          <div class="intro-lead-in" >Welcome To Simple To-Let House Search System</div>
           <div class="intro-heading text-uppercase">Find Home Together!<br></div>
         </div>
       </div>
@@ -168,13 +168,14 @@
                               echo '<p><b>Alternate Number: </b>'.$value['alternat_mobile'].'</p>';
                               echo '<p><b>Email: </b>'.$value['email'].'</p>';
                               echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
-                              if ($value['image'] !== 'uploads/') {
-                                echo '<p><b>Image:</b></p> </br> <img src="app/'.$value['image'].'" width="230" class="img-thumbnail">';
-                              }
+                             
 
                           echo '</div>
                             <div class="col-5">
-                            <h4 class="text-center">Property Details</h4>';
+                            <h4 class="text-center">To-Let House Details</h4>';
+                              if ($value['image'] !== 'uploads/') {
+                                echo '<p><b>Image:</b></p> </br> <img src="app/'.$value['image'].'" width="230" class="img-thumbnail">';
+                              }
                               echo '<p><b>Plot Number: </b>'.$value['plot_number'].'</p>';
 
                               if(isset($value['rent'])){
