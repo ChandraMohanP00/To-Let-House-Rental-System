@@ -1,7 +1,11 @@
-		
+			
   <div class="col-md-11 col-xs-12 col-sm-12">
   	<div class="alert alert-info" role="alert">
-  		
+  		<?php
+			if(isset($errMsg)){
+				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
+			}
+		?>
   		<h2 class="text-center">Register Room</h2>
   		<form action="" method="POST">
 		  	 <div class="row">
@@ -141,7 +145,7 @@
 			    <input type="other" class="form-control" id="other" placeholder="Other" name="other" value="<?php echo $data['other']?$data['other']:''; ?>" required>
 			  </div>
 			  </div>
-				
+			
 			  </div>			
 			  <button type="submit" class="btn btn-primary" name='register_individuals' value="register_individuals">Submit</button>
 			</form>	
