@@ -1,4 +1,10 @@
-<nav class="navbar navbar-expand-sm navbar-default sidebar" style="background-color:#212529;" id="mainNav">
+<?php
+  if(empty($_SESSION['role']))
+    header('Location: login.php');
+
+?>
+<br>
+  <nav class="navbar navbar-expand-sm navbar-default sidebar" style="background-color:#212529;" id="mainNav">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -10,18 +16,12 @@
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Register</a>       
+              <?php if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'user'){ 
+              echo '<a href="#" class="nav-link">Register</a>';
+            } ?>             
             </li>
             <li class="nav-item">
             <a href="#" class="nav-link">Details/Update</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">Send SMS</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">Complaint List</a>
             </li>
           </ul>
         </div>
